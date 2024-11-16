@@ -16,5 +16,6 @@ The first four tables were predefined by the project requirements, and I added t
 --- 
 ## Entity Relationship Diagram
 I used [dbdiagram.io](https://dbdiagram.io/home) to create an Entity Relationship Diagram for the database structure. 
+You can find the `plaintext` code for the ERD diagram in the files attached.
 
 ![Celestial Bodies Relational Diagram](relational-diagram.png)
