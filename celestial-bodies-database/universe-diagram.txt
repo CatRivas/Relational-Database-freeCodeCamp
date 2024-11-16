@@ -1,5 +1,5 @@
 Table galaxy {
-    galaxy_id integer [pk, increment] // Primary Key
+    galaxy_id serial [pk] // Primary Key
     name varchar(40) [unique] // Unique Constraint
     galaxy_type varchar(100)
     light_travel_time numeric(20,1) [not null]
@@ -7,7 +7,7 @@ Table galaxy {
 }
 
 Table star {
-    star_id integer [pk, increment] // Primary Key
+    star_id serial [pk] // Primary Key
     name varchar(40) [unique] // Unique Constraint
     age_in_millions_of_years integer [not null]
     distance_from_earth numeric(30,2)
@@ -15,7 +15,7 @@ Table star {
 }
 
 Table planet {
-    planet_id integer [pk, increment] // Primary Key
+    planet_id serial [pk] // Primary Key
     name varchar(40) [not null, unique] // Unique Constraint
     description text
     planet_types varchar(20)
@@ -24,7 +24,7 @@ Table planet {
 }
 
 Table moon {
-    moon_id integer [pk, increment] // Primary Key
+    moon_id serial [pk] // Primary Key
     name varchar(40) [unique] // Unique Constraint
     has_water boolean [not null]
     orbital_period numeric(10,3) [not null]
@@ -32,7 +32,7 @@ Table moon {
 }
 
 Table greek_gods {
-    greek_gods_id integer [pk, increment] // Primary Key
+    greek_gods_id serial [pk] // Primary Key
     name varchar(40) [not null, unique] // Unique Constraint
     power_level integer [not null]
     myth text
