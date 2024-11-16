@@ -1,0 +1,40 @@
+Table galaxy {
+    galaxy_id integer [pk, increment] // Primary Key
+    name varchar(40) [unique] // Unique Constraint
+    galaxy_type varchar(100)
+    light_travel_time numeric(20,1) [not null]
+    num_stars_estimated numeric(30,0)
+}
+
+Table star {
+    star_id integer [pk, increment] // Primary Key
+    name varchar(40) [unique] // Unique Constraint
+    age_in_millions_of_years integer [not null]
+    distance_from_earth numeric(30,2)
+    galaxy_id integer [ref: > galaxy.galaxy_id] // Foreign Key
+}
+
+Table planet {
+    planet_id integer [pk, increment] // Primary Key
+    name varchar(40) [not null, unique] // Unique Constraint
+    description text
+    planet_types varchar(20)
+    has_life boolean
+    star_id integer [ref: > star.star_id] // Foreign Key
+}
+
+Table moon {
+    moon_id integer [pk, increment] // Primary Key
+    name varchar(40) [unique] // Unique Constraint
+    has_water boolean [not null]
+    orbital_period numeric(10,3) [not null]
+    planet_id integer [ref: > planet.planet_id] // Foreign Key
+}
+
+Table greek_gods {
+    greek_gods_id integer [pk, increment] // Primary Key
+    name varchar(40) [not null, unique] // Unique Constraint
+    power_level integer [not null]
+    myth text
+    planet_id integer [ref: > planet.planet_id] // Foreign Key
+}
