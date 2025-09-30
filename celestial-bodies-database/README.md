@@ -32,3 +32,23 @@ Each table is connected through a foreign key relationship, helping to maintain 
 
 I used [dbdiagram.io](https://dbdiagram.io/home) to create an Entity Relationship Diagram for the database structure. 
 You can find the `plaintext` code for the ERD diagram in the files attached.
+
+## Recreate the Database
+**Note:** `universe.sql` is a full database dump. Running the command below will recreate both the schema and all data exactly as it was when the dump was generated — basically restoring the database to the state it was at the end of the project.
+
+
+> **Prerequisites:**  
+> Make sure you have PostgreSQL installed and available in your PATH.  
+
+```bash
+# Step 1: Create the database (only the first time)
+# Open the Postgres CLI (psql)
+psql -U postgres
+
+# Inside psql, create the database
+CREATE DATABASE universe;
+\q  # Exit psql
+
+# Step 2: Restore schema + data from the dump file into the database
+# Run this in your terminal (bash)
+psql -U postgres -d universe < universe.sql
