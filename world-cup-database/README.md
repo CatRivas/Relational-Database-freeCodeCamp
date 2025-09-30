@@ -14,11 +14,20 @@ The goal was to practice SQL queries, Bash scripting, and database manipulation,
 
 ## Recreate the Database
 
-`worldcup.sql` is a **full database dump**, so running the commands below will restore **both schema and data**:
+Follow these steps to recreate the database from `worldcup.sql`, that is a **full database dump**, so running the commands below will restore **both schema and data**:
+
+> **Prerequisites:**  
+> Make sure you have PostgreSQL installed and available in your PATH.  
 
 ```bash
-# Step 1: Create the database (only needs to be done once and it's a must)
-createdb worldcup
+# Step 1: Create the database (only the first time)
+# Open the Postgres CLI (psql)
+psql -U postgres
 
-# Step 2: Restore schema + data from the dump file into the newly created database
+# Inside psql, create the database
+CREATE DATABASE worldcup;
+\q  # Exit psql
+
+# Step 2: Restore schema + data from the dump file into the database
+# Run this in your terminal (bash)
 psql -U postgres -d worldcup < worldcup.sql
