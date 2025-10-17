@@ -3,3 +3,4 @@ Here you'll find all my solutions to the projects for the [Relational Database](
 * Celestial Bodies Database
 * World Cup Database
 * Salon Appointment Scheduler
+* Build a Periodic Table Database
