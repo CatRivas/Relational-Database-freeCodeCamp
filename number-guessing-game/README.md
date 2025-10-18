@@ -23,8 +23,8 @@ Welcome back, <username>! You have played <games_played> games, and your best ga
 You guessed it in <number_of_guesses> tries. The secret number was <secret_number>. Nice job!
 
 After debugging, reading the FreeCodeCamp forums, and comparing solutions, I discovered a few issues:
-**The forum said the program should end with the last output and I had placed the INSERT into the game table after the final output instead of before, so I moved it earlier.**
-**I also remembered that some automated tests have execution time limits, which means that fewer validations can make the script run more smoothly. So, I removed a few extra checks I had added (like verifying if the username was empty or if the number was within range), and after that, the script finally passed all the tests.**
+- **The forum said the program should end with the last output and I had placed the INSERT into the game table after the final output instead of before, so I moved it earlier.**
+- **I also remembered that some automated tests have execution time limits, which means that fewer validations can make the script run more smoothly. So, I removed a few extra checks I had added (like verifying if the username was empty or if the number was within range), and after that, the script finally passed all the tests.**
 
 Overall this project gave me some good practice in debugging and patience.
 
